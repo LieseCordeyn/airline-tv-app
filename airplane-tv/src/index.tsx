@@ -2,12 +2,22 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
+import DetailEpisode from './routes/episodeDetail'
 import reportWebVitals from './reportWebVitals';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  <BrowserRouter>
+    <Routes>
+      <Route path="/"  element={<App />}/>
+      <Route path="/episode"  element={<DetailEpisode />}>
+        <Route path=":Id" element={<DetailEpisode />}/>
+      </Route>
+      <Route path="*" element={
+        <h1>Page not found</h1>
+      } />
+    </Routes>
+  </BrowserRouter>,
   document.getElementById('root')
 );
 
