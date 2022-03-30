@@ -1,12 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import {Provider} from 'react-redux'
 import './index.css';
 import App from './App';
 import DetailEpisode from './routes/episodeDetail'
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import {store} from './Store/index'
 
 ReactDOM.render(
+  <Provider store = {store}>
   <BrowserRouter>
     <Routes>
       <Route path="/"  element={<App />}/>
@@ -17,7 +20,8 @@ ReactDOM.render(
         <h1>Page not found</h1>
       } />
     </Routes>
-  </BrowserRouter>,
+  </BrowserRouter>
+  </Provider>,
   document.getElementById('root')
 );
 

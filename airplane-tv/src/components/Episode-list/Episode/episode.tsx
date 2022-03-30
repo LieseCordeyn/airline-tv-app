@@ -1,5 +1,5 @@
 import React from 'react';
-import './episode.css';
+import './episode.scss'
 import {Link, Outlet} from "react-router-dom"
 var striptags = require('striptags')
 
@@ -22,7 +22,7 @@ var summary = ""
     
  
 return (
-    <div className="episode" >
+    <div className="episode">
         <h1>{props.name}</h1>
         <div className="infoEpisode">
         <p>{props.airtime}</p>

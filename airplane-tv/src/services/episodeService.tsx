@@ -1,4 +1,4 @@
-import Reac from "react"
+import React from "react"
 
 class EpisodeService {
 
@@ -16,7 +16,7 @@ class EpisodeService {
       return response.json();
     }
 
-    public async fetchEpisodeWithId(id: number){
+    public async fetchEpisodeWithId(id: any){
       const response = await fetch(`${this.url}/episodes/${id}`)
 
       return response.json();
@@ -25,4 +25,4 @@ class EpisodeService {
 }
 
 
-export const episodeService = new EpisodeService
+export const episodeService = new EpisodeService();
