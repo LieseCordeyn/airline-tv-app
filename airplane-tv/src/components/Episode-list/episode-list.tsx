@@ -4,6 +4,8 @@ import './episode-list.scss';
 import {episodeService} from '../../services/episodeService'
 import {useSelector, useDispatch} from 'react-redux';
 
+
+
 import { fetchEpisodes } from '../../Store/Facade';
 import {Episode, EpisodeState} from '../../Store/state'
 import { selectEpisodes, selectEpisodesError} from '../../Store/Selectors'
@@ -15,8 +17,6 @@ import {StoreState} from '../../Store/storeState'
  const episodes = useSelector<EpisodeState, any>(
     selectEpisodes
   ); 
-  
-  
 
  const error = useSelector<EpisodeState, string>(
     selectEpisodesError
@@ -31,14 +31,18 @@ import {StoreState} from '../../Store/storeState'
   });
   }, [dispatch])
 
+  const target = React.createRef() as any;
 
   return (
-    <main className="episodes" id="episodesOverview">
+    <section>
+
+    <main className="episodes" id="episodesOverview" >
       {
           episodes.map((x: any) => {
-            return <EpisodeComp id={x["id"]} name={x["name"]} airtime ={x["airtime"]} summary = {x["summary"]} showName={x["show"]["name"]} showType={x["show"]["type"]}/>
+            return <EpisodeComp id={x["id"]} showId={x["show"]["id"]} name={x["name"]} airtime ={x["airtime"]} summary = {x["summary"]} showName={x["show"]["name"]} showType={x["show"]["type"]}/>
           })}
     </main>
+    </section>
   ) 
 
  /////// WITH SERVICE /////////

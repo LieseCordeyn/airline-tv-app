@@ -9,6 +9,7 @@ body {
   color: white;
 }
 
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
@@ -17,3 +18,20 @@ code {
 main {
   margin: 2em 4em;
 }
+
+body::-webkit-scrollbar {
+  width: 15px;               
+}
+body::-webkit-scrollbar-track {
+  background: #1d1e20;        
+}
+body::-webkit-scrollbar-thumb {
+  background-color: #383c45;   
+  border-radius: 20px; 
+  height: 15px;      
+}
+
+body::-webkit-scrollbar-thumb:hover {
+  background-color: #666e7e;   
+}
+

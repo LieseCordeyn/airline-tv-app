@@ -17,11 +17,23 @@ class EpisodeService {
     }
 
     public async fetchEpisodeWithId(id: any){
-      const response = await fetch(`${this.url}/episodes/${id}`)
+      const response = await fetch(`${this.url}/episodes/${id}?embed=show`)
 
       return response.json();
     }
-  
+
+    public async fetchShowWithId(id: any){
+      const response = await fetch(`${this.url}/shows/${id}`)
+
+      return response.json();
+    }
+
+    public async fetchEpisodeWithUrl(url: any){
+      const response = await fetch(`${url}`)
+
+      return response.json();
+    }
+
 }
 
 

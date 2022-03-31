@@ -2,6 +2,9 @@ header {
     padding: 1em;
     background-color: #1d1e20;
     box-shadow: 0px 12px 20px 0px #0069ed;
+    position: sticky;
+    top: 0;
+    z-index: 2;
 }
 
 header p {
@@ -11,3 +14,14 @@ header p {
 header button {
     position: initial;
 }
+
+img#airplane{
+    background-color: #1d1e20;
+    transform: scaleX(-1);
+      height: 30px;
+      position: fixed;
+      left: 6%;
+      top: 1.5%;
+}
+  
+  

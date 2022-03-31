@@ -1,0 +1,58 @@
+#allInfo{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#currentEpisode{
+    background-color:  #323335;
+    width: 65%;
+    margin: 3em 2em 0 6em;
+    padding: 1em;
+}
+
+#currentEpisode h1 {
+    font-size: 20pt;
+    text-align: center;
+    margin: 0;
+    
+}
+
+#currentEpisode #info p{
+    padding: .7em;
+    background-color: #1d1e20;
+}
+
+#currentEpisode button {
+    position: inherit;
+    background-color: #0053ba;
+    margin: 0 1em 0 0;
+}
+
+
+#InfoShow{
+    background-color:  #323335;
+    width: 20%;
+    margin-top: 3em;
+    padding: 1em;
+    height: min-content;
+}
+
+#InfoShow h2 {
+    font-size: 17pt;
+    margin: 0;
+}
+
+#InfoShow button {
+    position: inherit;
+    background-color: #0053ba;
+    margin: 0 1em 0 0;
+}
+
+#InfoShow button a {
+    color: white;
+    text-decoration: none;
+}
+
+
+
+

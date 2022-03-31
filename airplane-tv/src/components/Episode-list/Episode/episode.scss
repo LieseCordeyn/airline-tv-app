@@ -1,17 +1,41 @@
 .episode{
-    border-radius: 15px;
     padding: 8px;
-    margin: 13px;
-    width: 330px;
-    height: 223px;
+    margin: 17px;
+    width: 250px;
+    height: 160px;
     background-color: #323335;
     position: relative;
+}
+
+.episode #summary {
+    display: none;
+}
+
+.episode button {
+    display: none;
+}
+
+.episode:hover #summary {
+  display: inherit;
+  color: white;
+}
+
+.episode:hover {
+    background-color: #0053ba;
+}
+
+.episode:hover .infoEpisode{
+    display: none;
+}
+
+.episode:hover button {
+    display: inherit;
 }
 
 .episode h1 {
     margin: 0;
     padding: 4px;
-    font-size: 20px;
+    font-size: 18px;
 }
 
 .episode p {
@@ -26,6 +50,7 @@
 
 .infoEpisode p{
     padding-bottom: 0;
+    text-align: center;
 }
 
 button {
@@ -34,7 +59,7 @@ button {
     padding: .5em 1em;
     margin: 0;
     text-decoration: none;
-    background: #0069ed;
+    background: #323335;
     color: #ffffff;
     font-family: sans-serif;
     font-size: 1rem;
@@ -46,18 +71,23 @@ button {
     -moz-appearance: none;
     position:absolute;                 
     bottom:3%; 
-    right: 3%;
+    right: 27%;
 }
 
-button:hover,
-button:focus {
-    background: #0053ba;
-}
-
-button:focus {
-    outline: none;
-}
 
 button:active {
     transform: scale(0.99);
 }
+
+
+button {
+    margin: auto;
+}
+
+#linkButton {
+    text-align: center;
+    color: white;
+    text-decoration: none;
+}
+
+

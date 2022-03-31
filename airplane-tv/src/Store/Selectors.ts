@@ -4,9 +4,7 @@ import { Episode, EpisodeState} from './state';
 
 export const selectEpisodes = (
     state: EpisodeState
-): any  => {
-    console.log("store",state.list);
-    
+): any  => {    
     return state.list;
 };
 

@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import {Provider} from 'react-redux'
-import './index.css';
+import './index.scss';
 import App from './App';
 import DetailEpisode from './routes/episodeDetail'
 import reportWebVitals from './reportWebVitals';
@@ -13,9 +13,8 @@ ReactDOM.render(
   <BrowserRouter>
     <Routes>
       <Route path="/"  element={<App />}/>
-      <Route path="/episode"  element={<DetailEpisode />}>
-        <Route path=":Id" element={<DetailEpisode />}/>
-      </Route>
+      <Route path="/episode/:Id"  element={<DetailEpisode />}/>
+      <Route path="episode/:Id/show/:show" element={<DetailEpisode />}/>
       <Route path="*" element={
         <h1>Page not found</h1>
       } />
