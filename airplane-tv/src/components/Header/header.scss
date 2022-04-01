@@ -17,11 +17,14 @@ header button {
 
 img#airplane{
     background-color: #1d1e20;
-    transform: scaleX(-1);
       height: 30px;
       position: fixed;
       left: 6%;
       top: 1.5%;
+}
+
+img#airplane:hover {
+    transform: rotate(10deg);
 }
   
   

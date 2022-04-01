@@ -4,4 +4,21 @@
     justify-content: space-around;
 }
 
+#countryButton {
+    display: initial;
+    position: initial;
+    background-color: #0053ba;
+    margin-left: 5px;
+}
 
+form {
+    position: fixed;
+    top: 1%;
+    right: 5%;
+    z-index: 5;
+}
+
+form input {
+    padding: .3em 1em;
+    border: none;
+}

@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, {useEffect, useRef, useState} from 'react';
 import EpisodeComp from './Episode/episode'
 import './episode-list.scss';
 import {episodeService} from '../../services/episodeService'
@@ -10,10 +10,14 @@ import { fetchEpisodes } from '../../Store/Facade';
 import {Episode, EpisodeState} from '../../Store/state'
 import { selectEpisodes, selectEpisodesError} from '../../Store/Selectors'
 import {StoreState} from '../../Store/storeState'
+ 
 
- function useList(){
+
+function useList(this: any){
   /////// WITH STORE ///////////
 
+  const [country, setCountry] = useState('')
+let countrySet = false
  const episodes = useSelector<EpisodeState, any>(
     selectEpisodes
   ); 
@@ -24,18 +28,41 @@ import {StoreState} from '../../Store/storeState'
 
   const dispatch = useDispatch();
 
+
  useEffect(() => {
-  episodeService.fetchEpisodes()
-  .then(response => {
+   if(countrySet == false){
+    episodeService.fetchEpisodes()
+      .then(response => {
+      dispatch(fetchEpisodes(response));
+    });
+   } else {
+    episodeService.fetchEpisodesCountry(country)
+    .then(response => {
     dispatch(fetchEpisodes(response));
   });
+   }
+  
   }, [dispatch])
 
-  const target = React.createRef() as any;
+  const useDataCountry = (e: any) => {
+    e.preventDefault()
+
+   countrySet = false;
+      episodeService.fetchEpisodesCountry(country)
+      .then(response => {
+        dispatch(fetchEpisodes(response));
+      });
+  
+  }
+
+
 
   return (
     <section>
-
+      <form>
+        <input placeholder="Country in ISO 3166-1 code " onChange={event => setCountry(event.target.value)}/>
+        <button onClick={useDataCountry}id="countryButton">Search country</button>
+      </form>
     <main className="episodes" id="episodesOverview" >
       {
           episodes.map((x: any) => {

@@ -1,7 +1,6 @@
 import React from 'react';
 import './episode.scss'
 import {Link, Outlet} from "react-router-dom"
-import { setSyntheticLeadingComments } from 'typescript';
 var striptags = require('striptags')
 
 
@@ -15,8 +14,6 @@ var summary = ""
                 summary = `${summary.substr(0, Math.min(summary.length, summary.lastIndexOf(" ")))}...`
                 
             } 
-        
-     
     } else {
         summary = "summary not availabe"
     }
