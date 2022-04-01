@@ -15,16 +15,55 @@ header button {
     position: initial;
 }
 
-img#airplane{
-    background-color: #1d1e20;
-      height: 30px;
-      position: fixed;
-      left: 6%;
-      top: 1.5%;
+img#airplane {
+    height: 30px;
+    position: fixed;
+    top: 6%;
+    left: -10%;
+    animation: test 9s linear infinite;
+    z-index: 200;
 }
 
 img#airplane:hover {
     transform: rotate(10deg);
 }
-  
-  
+
+
+img#airplane2 {
+    height: 30px;
+    position: fixed;
+    top: 6%;
+    left: -10%;
+    animation: test 9s linear infinite;
+    animation-delay: 3s;
+    z-index: 200;
+}
+
+img#airplane2:hover {
+    transform: rotate(10deg);
+}
+
+
+img#airplane3 {
+    height: 30px;
+    position: fixed;
+    top: 6%;
+    left: -10%;
+    animation: test 9s linear infinite;
+    animation-delay: 6s;
+    z-index: 200;
+}
+
+img#airplane3:hover {
+    transform: rotate(10deg);
+}
+
+@keyframes test {
+    0% {
+        left: -10%;
+    }
+
+    100% {
+        left: 100%;
+    }
+}
